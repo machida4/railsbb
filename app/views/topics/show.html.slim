@@ -1,0 +1,7 @@
+h1 Topics#show
+p Find me in app/views/topics/show.html.slim
+
+h2= @topic.title
+- @topic.posts.each do |post|
+  h5= post.user.name
+  = simple_format(h(post.message), {}, sanitize: false, wrapper_tag: "div")
