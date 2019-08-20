@@ -68,3 +68,6 @@ gem 'html2slim'
 # Devise
 gem 'devise'
 gem 'omniauth-twitter'
+
+# OmniauthのCSRF対策
+gem "omniauth-rails_csrf_protection"
