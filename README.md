@@ -1,24 +1,37 @@
-# README
+# Railsbb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railsの練習用レポジトリ
 
-Things you may want to cover:
+phpbbみたいなBBSをつくる
 
-* Ruby version
+↓やりたいこと
 
-* System dependencies
+* ✔スレ一覧表示機能
 
-* Configuration
+* ✔スレ詳細表示機能
 
-* Database creation
+* ✔スレ立て機能
 
-* Database initialization
+* ✔レス一覧表示機能
 
-* How to run the test suite
+* ✔レス書き込み機能
 
-* Services (job queues, cache servers, search engines, etc.)
+* 画像アップロード機能
 
-* Deployment instructions
+* Youtube埋め込み機能
 
-* ...
+* ページネーション機能
+
+* ユーザ登録機能
+
+* 管理ユーザ機能
+
+* Twitterログイン機能
+
+* Bootstrapで見た目をマシにする
+
+* offcanvas-navbar
+
+* 単体テスト機能
+
+* 統合テスト機能
