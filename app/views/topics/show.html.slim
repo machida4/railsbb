@@ -5,6 +5,9 @@ h2= @topic.title
 
 = link_to "スレッド一覧に戻る", topics_path
 
+= paginate @posts
+= page_entries_info @posts
+
 = form_with url: posts_create_path, model: @newpost, local: true do |f|
   = f.label "メッセージ"
   = f.text_area:message
@@ -14,7 +17,7 @@ h2= @topic.title
   = f.submit "投稿"
 
 
-- @topic.posts.each do |post|
+- @posts.each do |post|
   h5= post.user.name
   = simple_format(h(post.message), {}, sanitize: false, wrapper_tag: "div")
   = image_tag post.image if post.image.attached?

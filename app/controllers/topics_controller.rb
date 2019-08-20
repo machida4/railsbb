@@ -1,11 +1,12 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all.order(id: "DESC")
+    @topics = Topic.all.order(id: "DESC").page(params[:page])
+    @newpost = Post.new(topic_id: params[:id])
   end
 
   def show
     @topic = Topic.find(params[:id])
-    @newpost = Post.new(topic_id: params[:id])
+    @posts = @topic.posts.page(params[:page]).per(100)
   end
 
   def new

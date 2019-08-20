@@ -2,6 +2,10 @@ h1 Topics#index
 p Find me in app/views/topics/index.html.slim
 
 = link_to '新規スレ立て', new_topic_path
+
+= paginate @topics
+= page_entries_info @topics
+
 table
   thead
     tr
