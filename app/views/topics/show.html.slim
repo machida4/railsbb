@@ -7,8 +7,6 @@
   .my-3.p-3.bg-white.rounded.shadow-sm
     h2= @topic.title
 
-    = paginate @posts
-
     .my-3.p-3
       = form_with url: posts_create_path, model: @newpost, local: true do |f|
         .form-group
@@ -21,7 +19,12 @@
         = f.submit "投稿", class: 'btn btn-primary'
 
 
-    - @posts.each do |post|
-      h5= post.user.name
-      = simple_format(h(post.message), {}, sanitize: false, wrapper_tag: "div")
-      = image_tag post.image if post.image.attached?
+    - @posts.each_with_index do |post, index|
+      .media
+        .media-body.my-1.p-1.border-bottom
+          h5= (index + 1).to_s + ' ' + post.user.name
+          = simple_format(h(post.message), {}, sanitize: false, wrapper_tag: "div")
+          .img-fluid
+            = image_tag post.image, class: 'img-fluid' if post.image.attached?
+          .text-muted.float-right
+            = I18n.l(post.created_at)

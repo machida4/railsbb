@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @posts = @topic.posts.page(params[:page]).per(100)
+    @posts = @topic.posts
     @newpost = Post.new(topic_id: params[:id])
   end
 
