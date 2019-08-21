@@ -23,8 +23,9 @@
       .media
         .media-body.my-1.p-1.border-bottom
           h5= (index + 1).to_s + ' ' + post.user.name
-          = simple_format(h(post.message), {}, sanitize: false, wrapper_tag: "div")
-          .img-fluid
+          .ml-3
+            = simple_format(h(post.message), {}, sanitize: false, wrapper_tag: "div")
+          .img-fluid.mt-3
             = image_tag post.image, class: 'img-fluid' if post.image.attached?
-          .text-muted.float-right
+          .small.text-muted.float-right
             = I18n.l(post.created_at)

@@ -3,7 +3,7 @@
     .display-4
       h1 Railsbb
     p Find me in app/views/topics/index.html.slim
-    = link_to '新規スレ立て', new_topic_path, class: 'btn btn-primary btn-lg'
+    = link_to '新規スレッド作成', new_topic_path, class: 'btn btn-primary btn-lg'
 
   = paginate @topics
 
@@ -13,7 +13,7 @@
       .media
         .media-body.border-bottom.border-gray.mt-2
           h3= link_to topic.title, topic_path(topic)
-          .text-muted.float-right.mb-n1
+          .small.text-muted.float-right.mb-n1
             p= I18n.l(topic.created_at)
 
   = paginate @topics
