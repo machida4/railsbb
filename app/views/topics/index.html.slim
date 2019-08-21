@@ -1,19 +1,13 @@
-.container
-  .jumbotron.shadow-sm
-    .display-4
-      h1 Railsbb
-    p Find me in app/views/topics/index.html.slim
-    = link_to '新規スレッド作成', new_topic_path, class: 'btn btn-primary btn-lg'
 
-  = paginate @topics
+= paginate @topics
 
-  .my-3.p-3.bg-white.rounded.shadow-sm
-    .h6.border-bottom.border-gray.mb-n1 スレッド一覧
-    - @topics.each do |topic|
-      .media
-        .media-body.border-bottom.border-gray.mt-2
-          h3= link_to topic.title, topic_path(topic)
-          .small.text-muted.float-right.mb-n1
-            p= I18n.l(topic.created_at)
+.my-3.p-3.bg-white.rounded.shadow-sm
+  .h6.border-bottom.border-gray.mb-n1 スレッド一覧
+  - @topics.each do |topic|
+    .media
+      .media-body.border-bottom.border-gray.mt-2
+        h3= link_to topic.title, topic_path(topic)
+        .small.text-muted.float-right.mb-n1
+          p= I18n.l(topic.created_at)
 
-  = paginate @topics
+= paginate @topics

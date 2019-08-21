@@ -18,4 +18,10 @@ html
           = link_to 'ログイン', new_user_session_path
     p.notice= notice
     p.alert= alert
-    = yield
+    .container
+      .jumbotron.shadow-sm
+        .display-4
+          h1 Railsbb
+        p ここにおしゃまな説明文を書く
+        = link_to '新規スレッド作成', new_topic_path, class: 'btn btn-primary btn-lg'
+      = yield

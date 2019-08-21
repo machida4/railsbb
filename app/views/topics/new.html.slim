@@ -1,10 +1,6 @@
-.container
-  h1 Topics#new
-  p Find me in app/views/topics/new.html.slim
-
-  = form_with model: Topic.new, local:true do |f|
-    .form-group
-      = f.label "タイトル"
-      = f.text_field :title, class: 'form-control'
-    = f.submit "スレ立て", class: 'btn btn-primary'
-  = link_to "スレッド一覧に戻る", topics_path, class: 'btn btn-primary'
+= form_with model: Topic.new, local:true do |f|
+  .form-group
+    = f.label "タイトル"
+    = f.text_field :title, class: 'form-control'
+  = f.submit "スレ立て", class: 'btn btn-primary'
+= link_to "スレッド一覧に戻る", topics_path, class: 'btn btn-primary'
