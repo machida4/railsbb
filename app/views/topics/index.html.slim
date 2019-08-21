@@ -3,11 +3,16 @@
 
 .my-3.p-3.bg-white.rounded.shadow-sm
   .h6.border-bottom.border-gray.mb-n1 スレッド一覧
-  - @topics.each do |topic|
+  - @topics.each_with_index do |topic, index|
     .media
-      .media-body.border-bottom.border-gray.mt-2
-        h3= link_to topic.title, topic_path(topic)
-        .small.text-muted.float-right.mb-n1
-          p= I18n.l(topic.created_at)
-
+      - if index < @topics.length - 1
+        .media-body.border-bottom.border-gray.mt-2
+          h3= link_to topic.title, topic_path(topic)
+          .small.text-muted.float-right.mb-n1
+            p= I18n.l(topic.created_at)
+      - else
+        .media-body.mt-2.mb-n2
+          h3= link_to topic.title, topic_path(topic)
+          .small.text-muted.float-right.mb-n1
+            p= I18n.l(topic.created_at)
 = paginate @topics
