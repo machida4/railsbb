@@ -5,14 +5,25 @@
 
   - @posts.each_with_index do |post, index|
     .media
-      .media-body.my-1.p-1.border-bottom
-        h5= (index + 1).to_s + ' ' + post.user.name
-        .ml-3
-          = simple_format(h(post.message), {}, sanitize: false, wrapper_tag: "div")
-        .img-fluid.mt-3.mb-3
-          = image_tag post.image, class: 'img-fluid' if post.image.attached?
-        .small.text-muted.float-right.mt-n2
-          = I18n.l(post.created_at)
+      / TODO: ここDRYにしたいけどやりかたがわからない
+      - if index < @posts.length - 1
+        .media-body.my-1.p-1.border-bottom
+          h5= (index + 1).to_s + ' ' + post.user.name
+          .ml-3
+            = simple_format(h(post.message), {}, sanitize: false, wrapper_tag: "div")
+          .img-fluid.mt-3.mb-3
+            = image_tag post.image, class: 'img-fluid' if post.image.attached?
+          .small.text-muted.float-right.mt-n2
+            = I18n.l(post.created_at)
+      - else
+        .media-body.my-1.p-1
+          h5= (index + 1).to_s + ' ' + post.user.name
+          .ml-3
+            = simple_format(h(post.message), {}, sanitize: false, wrapper_tag: "div")
+          .img-fluid.mt-3.mb-3
+            = image_tag post.image, class: 'img-fluid' if post.image.attached?
+          .small.text-muted.float-right.mt-n2
+            = I18n.l(post.created_at)
 
   .my-3.p-3.border.rounded
     = form_with url: posts_create_path, model: @newpost, local: true do |f|

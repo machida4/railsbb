@@ -28,9 +28,9 @@ phpbbみたいなBBSをつくる
 
 * Twitterログイン機能
 
-* Bootstrapで見た目をマシにする
+* ✔Bootstrapで見た目をマシにする
 
-* offcanvas-navbar
+* offcanvasのナビゲーションバー
 
 * 単体テスト機能
 

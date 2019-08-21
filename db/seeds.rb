@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# id = 1のユーザーがいないとエラーになるので
+User.create(id: 1, name: 'nanasi', email: 'example@example.com', password: 'password')
