@@ -14,6 +14,6 @@
         .media-body.border-bottom.border-gray.mt-2
           h4= link_to topic.title, topic_path(topic)
           .text-muted.float-right.mb-n1
-            p= topic.created_at
+            p= I18n.l(topic.created_at)
 
   = paginate @topics
