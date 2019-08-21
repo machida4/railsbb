@@ -1,5 +1,5 @@
 .container
-  .jumbotron
+  .jumbotron.shadow-sm
     .display-4
       h1 Railsbb
     p Find me in app/views/topics/index.html.slim
@@ -12,7 +12,7 @@
     - @topics.each do |topic|
       .media
         .media-body.border-bottom.border-gray.mt-2
-          h4= link_to topic.title, topic_path(topic)
+          h3= link_to topic.title, topic_path(topic)
           .text-muted.float-right.mb-n1
             p= I18n.l(topic.created_at)
 
