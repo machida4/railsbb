@@ -16,12 +16,16 @@ html
         - else
           = link_to 'サインアップ', new_user_registration_path
           = link_to 'ログイン', new_user_session_path
-    p.notice= notice
-    p.alert= alert
+
     .container
+      - if flash.notice.present?
+        p.notice.alert.alert-success= notice
+      - if flash.alert.present?
+        p.alert.alert-danger= alert
+
       .jumbotron.shadow-sm
         .display-4
           h1 Railsbb
-        p ここにおしゃまな説明文を書く
+        p ここにおしゃれな説明文を書く
         = link_to '新規スレッド作成', new_topic_path, class: 'btn btn-primary btn-lg'
       = yield

@@ -15,7 +15,7 @@ class TopicsController < ApplicationController
   def create
     topic = Topic.new(topic_title)
     if topic.save
-      redirect_to topics_path, notice: "スレッドを立てました"
+      redirect_to topic_path(topic), notice: "スレッドを立てました"
     else
       render :new
     end
