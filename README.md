@@ -1,8 +1,6 @@
 # Railsbb
 
-Railsの練習用レポジトリ
-
-phpbbみたいなBBSをつくる
+Railsの練習に掲示板をつくってみる
 
 ↓やりたいこと
 
